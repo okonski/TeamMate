@@ -1,0 +1,14 @@
+#menu {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#menu li {
+  display: inline;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+#menu ul li {
+  display: inline;
+}

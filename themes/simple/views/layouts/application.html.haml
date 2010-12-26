@@ -2,10 +2,21 @@
 %html
   %head
     %title ClanLeopard
-    = theme_stylesheet_link_tag 'base'
+    = theme_stylesheet_link_tag 'menu'
+    = theme_stylesheet_link_tag 'scaffold'
     = theme_javascript_include_tag 'base'
     = csrf_meta_tag
   
   %body
-    = render_navigation
+    %div#menu
+      = render_navigation
+      
+    %div.flashes
+      %div#error
+        = flash[:error]
+      %div#notice
+        = flash[:notice]
+      %div#message
+        = flash[:message]
+        
     = yield

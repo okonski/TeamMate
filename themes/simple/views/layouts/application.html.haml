@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title ClanLeopard
+    = theme_stylesheet_link_tag 'base'
+    = theme_javascript_include_tag 'base'
+    = csrf_meta_tag
+  
+  %body
+    = render_navigation
+    = yield

@@ -1,0 +1,11 @@
+- show_for @entry do |e|
+  = e.attribute :title
+  = e.attribute :content
+  = e.attribute :email, :in => :author
+  = e.attribute :name, :in => :category
+  
+
+.links
+  = link_to 'Edit', edit_entry_path(@entry)
+  \|
+  = link_to 'Back', entries_path

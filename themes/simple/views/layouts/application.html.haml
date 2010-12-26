@@ -4,12 +4,13 @@
     %title ClanLeopard
     = theme_stylesheet_link_tag 'menu'
     = theme_stylesheet_link_tag 'scaffold'
-    = theme_javascript_include_tag 'base'
     = csrf_meta_tag
   
   %body
     %div#menu
       = render_navigation
+    
+    = current_user.try(:email) || "NONE"
       
     %div.flashes
       %div#error

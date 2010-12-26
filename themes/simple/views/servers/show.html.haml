@@ -1,0 +1,9 @@
+- show_for @server do |s|
+  = s.attribute :title
+  = s.attribute :address
+
+
+- if can? :manage, Server
+  = link_to "Edit Server", edit_resource_path
+  \|
+  = link_to "Delete Server", resource_path, :method => :delete

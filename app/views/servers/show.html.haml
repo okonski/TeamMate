@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @server.title
+%p
+  %b Address:
+  = @server.address
+
+= link_to 'Edit', edit_server_path(@server)
+\|
+= link_to 'Back', servers_path

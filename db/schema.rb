@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 8) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.integer  "type"
+    t.integer  "g_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

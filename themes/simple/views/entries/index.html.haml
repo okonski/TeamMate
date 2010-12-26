@@ -2,3 +2,7 @@
 
 - @entries.paginate(:page => params[:page], :order => 'created_at DESC').each do |entry|
   = render :partial => 'entry', :locals => {:e => entry }
+
+
+.links
+  = link_to "New Entry", new_resource_path

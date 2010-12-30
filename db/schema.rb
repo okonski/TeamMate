@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 9) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.integer  "g_type"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 9) do
   create_table "permissions", :force => true do |t|
     t.integer  "group_id"
     t.string   "action"
-    t.string   "subject_class"
+    t.string   "klass"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

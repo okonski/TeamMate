@@ -3,7 +3,7 @@ class CreatePermissions < ActiveRecord::Migration
     create_table :permissions do |t|
       t.references :group
       t.string :action
-      t.string :subject_class
+      t.string :klass
 
       t.timestamps
     end

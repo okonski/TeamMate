@@ -1,0 +1,9 @@
+%div{:class => "comment_#{@comment.id.to_s} comment"}
+  %div
+    By
+    %span.author
+      = @comment.author.email
+  .body
+    = @comment.body
+  .links.actions
+    = link_to 'Edit', [:edit, @comment.entry, @comment] if can? :manage, @comment

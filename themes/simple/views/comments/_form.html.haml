@@ -1,0 +1,21 @@
+= simple_form_for @comment, :url => [@entry, @comment] do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@comment.errors.count, "error")
+        prohibited this comment from being saved:
+
+      %ul
+      - @comment.errors.full_messages.each do |msg|
+        %li= msg
+
+  .inputs
+    = f.input :author_id, :input_html => {:value => current_user.id, :hidden => true}, 
+                          :label => false
+    = f.input :entry_id, :input_html => {:value => @entry.id, :hidden => true}, 
+                          :label => false
+    = f.input :body, :input_html => {:rows => 3, :cols => 10}, 
+              :placeholder => "Comment body", :label => false
+
+  .actions
+    = f.button :submit

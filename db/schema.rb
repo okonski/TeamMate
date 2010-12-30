@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 9) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment"
+    t.text     "body"
+    t.integer  "author_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "entry_id"

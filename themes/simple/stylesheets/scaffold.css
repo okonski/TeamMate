@@ -58,3 +58,19 @@ div.field, div.actions {
 div.links {
   margin-top: 20px;
 }
+
+div.entry > div.body {
+  margin-bottom: 10px;
+}
+
+div.comment > div > span.author {
+  font-weight: bold;
+}
+
+div.comment > div.actions {
+  display: inline;
+}
+
+div.comment {
+  margin-bottom: 20px;
+}

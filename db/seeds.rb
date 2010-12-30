@@ -1,8 +1,15 @@
 if ENV.include? 'GROUPS'
+  puts "Creating default groups..."
   Group.destroy_all
-  Group.create(:name => 'Administrators', :g_type => 1)
-  g = Group.create(:name => 'Clan Members', :g_type => 2)
+  Group.create(:name => 'Administrators', :admin => true)
+  g = Group.create(:name => 'Clan Members', :admin  => false)
   [[:manage, Entry]].each do |a|
-    g.permissions.create(:action => a.first.to_sym, :subject_class => a.second.to_s)
+    g.permissions.create(:action => a.first.to_sym, :klass => a.second.to_s)
   end
+  
+  if u = User.first
+    puts "Assigning admin group to the first user"
+    u.group = Group.where(:admin => true).first
+    u.save
+  end   
 end

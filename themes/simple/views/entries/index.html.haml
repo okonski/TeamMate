@@ -1,8 +1,9 @@
 %h1 Entries
 
-- @entries.paginate(:page => params[:page], :order => 'created_at DESC').each do |entry|
+- @entries.paginate(:page => params[:page], :order => 'created_at DESC', 
+                    :per_page => Entry.per_page).each do |entry|
   = render :partial => 'entry', :locals => {:@entry => entry }
 
 
 .links
-  = link_to "New Entry", new_resource_path
+  = link_to "New Entry", [:new, :entry]

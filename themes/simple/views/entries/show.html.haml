@@ -1,8 +1,4 @@
-- show_for @entry do |e|
-  = e.attribute :title
-  = e.attribute :content
-  = e.attribute :email, :in => :author
-  = e.attribute :name, :in => :category
+= render :partial => 'entry', :locals => {:@entry => @entry}
   
 
 .links

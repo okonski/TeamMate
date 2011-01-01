@@ -5,6 +5,12 @@
     %span.date= @entry.created_at
   .body
     = @entry.content.html_safe
+    
+  - if can? :manage, @entry
+    .links.actions
+      = link_to 'Edit', [:edit, @entry]
+      = link_to 'Destroy', @entry, :method => :delete, :confirm => "Are you sure?"
+      
   .comments
     %h5 Comments on this entry
   
@@ -14,3 +20,4 @@
     .new_comment
       = render :partial => 'comments/form', 
                 :locals => {:@entry => @entry, :@comment => @entry.comments.new}
+

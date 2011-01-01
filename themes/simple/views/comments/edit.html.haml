@@ -1,7 +1,7 @@
-%h1 Editing comment
+.comment.edit
+  %h5 Editing comment
 
-= render 'form'
-
-= link_to 'Show', @comment
-\|
-= link_to 'Back', comments_path
+  = render 'form'
+  
+  .links
+    = link_to 'Back', [@entry]

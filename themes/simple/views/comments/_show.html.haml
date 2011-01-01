@@ -5,5 +5,8 @@
       = @comment.author.email
   .body
     = @comment.body
-  .links.actions
-    = link_to 'Edit', [:edit, @comment.entry, @comment] if can? :manage, @comment
+  
+  - if can? :manage, @comment
+    .links.actions
+      = link_to 'Edit', [:edit, @comment.entry, @comment]
+      = link_to 'Destroy', [@comment.entry, @comment], :method => :delete, :confirm => "Are you sure?"

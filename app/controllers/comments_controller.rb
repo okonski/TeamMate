@@ -15,4 +15,28 @@ class CommentsController < InheritedResources::Base
       end
     end
   end
+  
+  def update
+    update! do |success, failure|
+      success.any do
+        redirect_to @entry
+      end
+    
+      failure.any do
+        redirect_to @entry, :error => "Comment could not be updated."
+      end
+    end
+  end
+  
+  def destroy
+    destroy! do |success, failure|
+      success.any do
+        redirect_to @entry
+      end
+      
+      failure.any do
+        redirect_to @entry, :error => "Comment could not be deleted."
+      end
+    end
+  end
 end

@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   #acts_as_voteable
   
-  validates_presence_of :author, :body #, :entry
+  validates_presence_of :author, :body, :commentable
 
   # NOTE: Comments belong to an entry
   # belongs_to :entry

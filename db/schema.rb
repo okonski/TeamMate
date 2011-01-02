@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 9) do
+ActiveRecord::Schema.define(:version => 12) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -46,10 +46,34 @@ ActiveRecord::Schema.define(:version => 9) do
     t.datetime "updated_at"
   end
 
+  create_table "hardwares", :force => true do |t|
+    t.string   "cpu"
+    t.string   "vga"
+    t.string   "sound"
+    t.string   "mouse"
+    t.string   "keyboard"
+    t.string   "ram"
+    t.string   "net"
+    t.string   "hdd"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "permissions", :force => true do |t|
     t.integer  "group_id"
     t.string   "action"
     t.string   "klass"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "steam"
+    t.string   "xfire"
+    t.string   "jabber"
+    t.string   "gadugadu"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,9 +114,19 @@ ActiveRecord::Schema.define(:version => 9) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "group_id"
+    t.string   "name"
+    t.integer  "gender"
+    t.string   "country"
+    t.integer  "age"
+    t.integer  "profile_id"
+    t.integer  "hardware_id"
+    t.text     "signature"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

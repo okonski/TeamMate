@@ -1,4 +1,6 @@
 ClanLeopard::Application.routes.draw do
+  resources :users, :path => '/profiles'
+
   resources :servers, :entries do
     resources :comments, :except => [:new, :index, :show]
   end

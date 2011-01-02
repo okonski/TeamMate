@@ -1,0 +1,15 @@
+- show_for @user do |u|
+  = u.attribute :name
+  = u.attribute :gender
+  = u.attribute :country
+  = u.attribute :age
+  
+  = u.attribute :gadugadu, :in => :profile, :label => "Gadu Gadu"
+  = u.attribute :cpu, :in => :hardware, :label => "CPU"
+  
+  = u.attribute :signature
+
+- if can? :manage, @user
+  .links
+    = link_to 'Edit', [:edit, @user]
+    = link_to 'Back', [:users]

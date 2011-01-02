@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Gender:
+  = @user.gender
+%p
+  %b Country:
+  = @user.country
+%p
+  %b Age:
+  = @user.age
+%p
+  %b Profile:
+  = @user.profile
+%p
+  %b Hardware:
+  = @user.hardware
+%p
+  %b Signature:
+  = @user.signature
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

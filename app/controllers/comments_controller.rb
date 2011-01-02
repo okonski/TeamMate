@@ -1,5 +1,5 @@
 class CommentsController < InheritedResources::Base
-  nested_belongs_to :entry, :polymorphic => true
+  nested_belongs_to :entry, :server, :polymorphic => true
   
   def create
     create! do |success, failure|

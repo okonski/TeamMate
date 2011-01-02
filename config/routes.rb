@@ -1,8 +1,6 @@
 ClanLeopard::Application.routes.draw do
-  resources :servers
-
-  resources :entries do
-    resources :comments, :except => [:new]
+  resources :servers, :entries do
+    resources :comments, :except => [:new, :index, :show]
   end
 
   root :to => 'home#index'

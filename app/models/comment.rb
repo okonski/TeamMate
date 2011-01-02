@@ -16,4 +16,5 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to an entry
   # belongs_to :entry
+  # This works without this association and a reference, we'll make use of polymorphic association
 end

@@ -4,5 +4,6 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :login, 'Logout', [:destroy, :user_session]
     primary.item :entries, 'Entries', [:entries]
     primary.item :servers, 'Servers', [:servers]
+    primary.item :members, 'Members', [:users]
   end
 end

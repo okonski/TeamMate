@@ -1,5 +1,5 @@
 class CommentsController < InheritedResources::Base
-  nested_belongs_to :entry
+  nested_belongs_to :entry, :polymorphic => true
   
   def create
     create! do |success, failure|
@@ -37,5 +37,5 @@ class CommentsController < InheritedResources::Base
         redirect_to @comment.commentable, :error => "Comment could not be deleted."
       end
     end
-  end
+  end      
 end

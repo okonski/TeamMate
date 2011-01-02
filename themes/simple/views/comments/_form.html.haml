@@ -1,4 +1,5 @@
-= simple_form_for @comment, :url => [@entry, @comment] do |f|
+- @commentable ||= parent # assigns polymorphic parent if local @commentable has not been set
+= simple_form_for @comment, :url => [@commentable, @comment] do |f|
   - if @comment.errors.any?
     #error_explanation
       %h2

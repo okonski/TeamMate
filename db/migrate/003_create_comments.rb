@@ -4,13 +4,11 @@ class CreateComments < ActiveRecord::Migration
       t.text :body
       t.references :author
       t.references :commentable, :polymorphic => true
-      t.references :entry
       t.timestamps
     end
 
     add_index :comments, :commentable_type
     add_index :comments, :commentable_id
-    add_index :comments, :entry_id
   end
 
   def self.down

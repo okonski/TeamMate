@@ -19,5 +19,4 @@
   
     .new_comment
       = render :partial => 'comments/form', 
-                :locals => {:@entry => @entry, :@comment => @entry.comments.new}
-
+                :locals => {:@commentable => @entry, :@comment => @entry.comments.new}

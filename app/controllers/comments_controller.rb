@@ -5,9 +5,8 @@ class CommentsController < InheritedResources::Base
     create! do |success, failure|
       success.any do
         @comment.author = current_user
-        @comment.entry = @entry
         @comment.save
-        redirect_to @entry
+        redirect_to @comment.commentable
       end
       
       failure.any do
@@ -19,11 +18,11 @@ class CommentsController < InheritedResources::Base
   def update
     update! do |success, failure|
       success.any do
-        redirect_to @entry
+        redirect_to @comment.commentable
       end
     
       failure.any do
-        redirect_to @entry, :error => "Comment could not be updated."
+        redirect_to @comment.commentable, :error => "Comment could not be updated."
       end
     end
   end
@@ -31,11 +30,11 @@ class CommentsController < InheritedResources::Base
   def destroy
     destroy! do |success, failure|
       success.any do
-        redirect_to @entry
+        redirect_to @comment.commentable
       end
       
       failure.any do
-        redirect_to @entry, :error => "Comment could not be deleted."
+        redirect_to @comment.commentable, :error => "Comment could not be deleted."
       end
     end
   end

@@ -10,12 +10,10 @@
         %li= msg
 
   .inputs
-    = f.input :author_id, :input_html => {:value => current_user.id, :hidden => true}, 
-                          :label => false
-    = f.input :entry_id, :input_html => {:value => @entry.id, :hidden => true}, 
-                          :label => false
-    = f.input :body, :input_html => {:rows => 3, :cols => 10}, 
-              :placeholder => "Comment body", :label => false
+    = f.input :author_id, :input_html => {:value => current_user.id, :hidden => true}, :label => false
+    = f.input :commentable_id, :input_html => {:value => @commentable.id, :hidden => true}, :label => false
+    = f.input :commentable_type, :input_html => {:value => @commentable.class.to_s.constantize.name, :hidden => true}, :label => false
+    = f.input :body, :input_html => {:rows => 3, :cols => 10}, :placeholder => "Comment body", :label => false
 
   .actions
     = f.button :submit

@@ -8,5 +8,5 @@
   
   - if can? :manage, @comment
     .links.actions
-      = link_to 'Edit', [:edit, @comment.entry, @comment]
-      = link_to 'Destroy', [@comment.entry, @comment], :method => :delete, :confirm => "Are you sure?"
+      = link_to 'Edit', [:edit, @comment.commentable, @comment]
+      = link_to 'Destroy', [@comment.commentable, @comment], :method => :delete, :confirm => "Are you sure?"

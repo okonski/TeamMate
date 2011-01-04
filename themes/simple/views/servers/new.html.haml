@@ -1,0 +1,7 @@
+%h1 New server
+
+= semantic_form_for @server do |f|
+  
+  = render :partial => 'form', :locals => {:f => f}
+
+= link_to 'Back', [:servers]

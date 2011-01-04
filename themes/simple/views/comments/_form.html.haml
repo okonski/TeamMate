@@ -1,20 +1,7 @@
-- @commentable ||= parent # assigns polymorphic parent if local @commentable has not been set
-= simple_form_for @comment, :url => [@commentable, @comment] do |f|
-  - if @comment.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@comment.errors.count, "error")
-        prohibited this comment from being saved:
+- f.inputs do
+  = f.input :author_id, :as => :hidden, :value => current_user.id
+  = f.input :commentable_id, :as => :hidden, :value => @commentable.id
+  = f.input :commentable_type, :as => :hidden, :value => @commentable.class.to_s.constantize.name
+  = f.input :body, :input_html => {:rows => 3, :cols => 10}, :placeholder => "Comment body", :label => false
 
-      %ul
-      - @comment.errors.full_messages.each do |msg|
-        %li= msg
-
-  .inputs
-    = f.input :author_id, :input_html => {:value => current_user.id, :hidden => true}, :label => false
-    = f.input :commentable_id, :input_html => {:value => @commentable.id, :hidden => true}, :label => false
-    = f.input :commentable_type, :input_html => {:value => @commentable.class.to_s.constantize.name, :hidden => true}, :label => false
-    = f.input :body, :input_html => {:rows => 3, :cols => 10}, :placeholder => "Comment body", :label => false
-
-  .actions
-    = f.button :submit
+= f.buttons

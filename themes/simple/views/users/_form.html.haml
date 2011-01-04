@@ -1,21 +1,19 @@
-.inputs
-  = f.input :name
-  - if @user.new_record?
-    = f.input :email
-    = f.input :password
-    = f.input :password_confirmation
-  - else
-    = f.input :gender, :as => :select, :collection => {"Not specified" => 0, "Male" => 1, "Female" => 2}
-    = f.input :country, :as => :select, :collection => $COUNTRIES
-    = f.input :age, :collection => 10..50
+= f.input :name
+- if @user.new_record?
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+- else
+  = f.input :gender, :as => :select, :collection => {"Not specified" => 0, "Male" => 1, "Female" => 2}
+  = f.input :country, :as => :select, :collection => $COUNTRIES
+  = f.input :age, :collection => 10..50
+  
+  = f.inputs :name => "Profile", :for => :profile do |p|
+    = p.inputs :steam, :xfire, :jabber, :gadugadu
     
-    = f.inputs :name => "Profile", :for => :profile do |p|
-      = p.inputs :steam, :xfire, :jabber, :gadugadu
-      
-    = f.inputs :name => "Hardware", :for => :hardware do |h|
-      = h.inputs :cpu, :vga, :ram, :sound, :mouse, :keyboard, :net, :hdd
-      
-    = f.input :signature
+  = f.inputs :name => "Hardware", :for => :hardware do |h|
+    = h.inputs :cpu, :vga, :ram, :sound, :mouse, :keyboard, :net, :hdd
+    
+  = f.input :signature
 
-.actions
-  = f.buttons
+= f.buttons

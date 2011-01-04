@@ -1,6 +1,8 @@
 %h1 Editing user
 
-= render 'form'
+= semantic_form_for @user do |f|
+  
+  = render :partial => 'form', :locals => {:f => f}
 
 = link_to 'Show', @user
 \|

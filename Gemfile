@@ -22,6 +22,9 @@ gem 'simple-navigation'
 gem 'active_scaffold'
 gem 'show_for'
 
+  ## Javascript
+  gem 'jquery-rails', '>= 0.2.6'
+
 # Controllers
 gem 'inherited_resources'
 gem 'has_scope'

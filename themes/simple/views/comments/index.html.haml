@@ -4,10 +4,4 @@
   - parent.comments.each do |comment|
     = render :partial => 'comments/show', :locals => {:@comment => comment}
   
-  #comment-new-tmp
-  
-  :javascript
-    $.get("#{url_for [:new, parent, :comment]}", function(data){
-      $("#comment-new-tmp").after(data);
-      $("#comment-new-tmp").remove();
-    });
+  = link_to_replace 'New Comment', [:new, parent, :comment]

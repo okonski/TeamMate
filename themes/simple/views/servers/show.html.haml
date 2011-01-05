@@ -1,7 +1,13 @@
-= render :partial => 'server', :locals => {:@server => @server}
+.server{:id => "server_#{@server.id.to_s}"}
+  .title
+    = @server.title
   
-
-.links
-  = link_to 'Edit', [:edit, @server]
-  \|
-  = link_to 'Back', [:servers]
+  .address
+    = @server.address
+    
+  - if can? :manage, @server
+    .links.actions
+      = link_to 'Edit', [:edit, @server]
+      = link_to 'Destroy', @server, :method => :delete, :confirm => "Are you sure?"
+      
+  = link_to_replace("Show Comments", [@server, :comments])

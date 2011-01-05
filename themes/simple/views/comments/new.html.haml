@@ -1,0 +1,9 @@
+.comment.new
+  %h5 New comment
+  
+  = semantic_form_for [parent, @comment] do |f|
+    = render :partial => 'comments/form', :locals => {:f => f, :@commentable => parent}
+  
+  - unless request.xhr?
+    .links
+      = link_to 'Back', parent

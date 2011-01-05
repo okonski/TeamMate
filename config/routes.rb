@@ -2,7 +2,7 @@ ClanLeopard::Application.routes.draw do
   resources :users, :path => '/profiles'
 
   resources :servers, :entries do
-    resources :comments, :except => [:new, :index, :show]
+    resources :comments
   end
 
   root :to => 'home#index'

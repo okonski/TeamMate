@@ -11,4 +11,12 @@ class EntriesController < InheritedResources::Base
       end
     end
   end
+  
+  def show
+    show! do |format|
+      format.html do
+        render '_show'
+      end
+    end
+  end
 end

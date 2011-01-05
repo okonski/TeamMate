@@ -1,0 +1,8 @@
+.entry.new
+  %h1 New entry
+
+  = semantic_form_for @entry do |f|
+  
+    = render :partial => 'form', :locals => {:f => f}
+
+  = link_to 'Back', [:entries]

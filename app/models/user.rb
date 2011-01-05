@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation, :remember_me
   
   belongs_to :group
-  belongs_to :profile
-  belongs_to :hardware
+  has_one :profile
+  has_one :hardware
   
   accepts_nested_attributes_for :profile, :hardware
 end

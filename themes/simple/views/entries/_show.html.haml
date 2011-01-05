@@ -11,12 +11,4 @@
       = link_to 'Edit', [:edit, @entry]
       = link_to 'Destroy', @entry, :method => :delete, :confirm => "Are you sure?"
       
-  .comments
-    %h5 Comments on this entry
-  
-    - @entry.comments.each do |comment|
-      = render :partial => 'comments/show', :locals => {:@comment => comment}
-  
-    .new_comment
-      = render :partial => 'comments/form', 
-                :locals => {:@commentable => @entry, :@comment => @entry.comments.new}
+  = link_to_replace "Show comments", [@entry, :comments]

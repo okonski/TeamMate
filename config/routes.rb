@@ -1,4 +1,8 @@
 ClanLeopard::Application.routes.draw do
+  namespace :forum do resources :topics end
+
+  namespace :forum do resources :categories end
+
   resources :users, :path => '/profiles'
 
   resources :servers, :entries do

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Category:
+  = @forum_topic.category
+%p
+  %b Title:
+  = @forum_topic.title
+%p
+  %b Author:
+  = @forum_topic.author
+
+= link_to 'Edit', edit_forum_topic_path(@forum_topic)
+\|
+= link_to 'Back', forum_topics_path

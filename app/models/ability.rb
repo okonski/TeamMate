@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     unless user.group.admin
       user.group.permissions.each do |permission|
-        can permission.action.to_sym, permission.k.constantize
+        can permission.action.to_sym, permission.k.constantize, permission.options
       end
     else
       can :manage, :all

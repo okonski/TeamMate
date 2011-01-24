@@ -34,7 +34,7 @@ gem 'acts_as_commentable'
 gem 'acts-as-taggable-on'
 
 # Theming
-gem 'themes_for_rails'
+gem 'themes_for_rails', :git => 'git://github.com/lucasefe/themes_for_rails.git'
 
 # Testing
 group :development, :test do

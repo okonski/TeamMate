@@ -1,6 +1,6 @@
 ClanLeopard::Application.routes.draw do
   namespace :forum do
-    resources :categories do
+    resources :categories, :path => '/' do
       resources :topics
     end    
   end

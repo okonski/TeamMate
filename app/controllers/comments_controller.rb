@@ -8,11 +8,11 @@ class CommentsController < InheritedResources::Base
       success.any do
         @comment.author = current_user
         @comment.save
-        redirect_to @comment.commentable || forum_category_topic_path(params[:category_id], params[:topic_id])
+        redirect_to @comment.commentable
       end
       
       failure.any do
-        redirect_to @entry, :error => "Your comment could not be saved."
+        redirect_to @comment.commentable, :error => "Your comment could not be saved."
       end
     end
   end

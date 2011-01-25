@@ -2,7 +2,23 @@
   = t.attribute :title
   = t.association :author
   = t.association :category
+
+
+%h2 Posts
+- @topic.comments.each do |post|
+  %p
+    #{post.author.email} says:
+    = post.body
+    = link_to 'Destroy', [@topic, post], :method => :delete
+
   
-= link_to 'Edit', edit_forum_category_topic_path(@category, @topic)
+%h3 New Post
+= semantic_form_for @topic.comments.new, :url => forum_topic_comments_path(@topic) do |f|
+  = f.inputs do
+    = f.input :author, :as => :radio
+    = f.input :body
+  = f.buttons
+  
+= link_to 'Edit', [:edit, @topic]
 \|
-= link_to 'Back', forum_category_topics_path(@category)
+= link_to 'Back', [:forum, :topics]

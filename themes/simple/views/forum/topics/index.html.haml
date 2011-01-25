@@ -12,10 +12,10 @@
     %tr
       %td= forum_topic.title
       %td= forum_topic.author.name
-      %td= link_to 'Show', forum_category_topic_path(@category, forum_topic)
-      %td= link_to 'Edit', edit_forum_category_topic_path(@category, forum_topic)
-      %td= link_to 'Destroy', forum_category_topic_path(@category, forum_topic), :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', forum_topic
+      %td= link_to 'Edit', [:edit, forum_topic]
+      %td= link_to 'Destroy', forum_topic, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Topic', new_forum_category_topic_path(@category)
+= link_to 'New Topic', [:new, :forum, :topic]

@@ -1,10 +1,4 @@
-- url = case @topic.new_record?
-  - when true
-    - forum_category_topics_path(@category)
-  - when false
-    - forum_category_topic_path(@category, @topic)
-    
-= semantic_form_for @topic, :url => url, :as => 'topic' do |f|
+= semantic_form_for @topic, :as => 'topic' do |f|
   = f.inputs do
     = f.input :title
     = f.input :category, :as => :radio

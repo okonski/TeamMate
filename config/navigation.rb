@@ -5,5 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :entries, 'Entries', [:entries]
     primary.item :servers, 'Servers', [:servers]
     primary.item :members, 'Members', [:users]
+    primary.item :messages, 'Messages', [:messages] if current_user
+    primary.item :forum, 'Forum', [:forum, :categories]
   end
 end

@@ -1,4 +1,6 @@
 ClanLeopard::Application.routes.draw do
+  resources :messages
+
   namespace :forum do
     resources :topics do
       resources :comments

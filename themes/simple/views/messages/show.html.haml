@@ -1,0 +1,10 @@
+= show_for @message do |m|
+  = m.association :author
+  = m.association :recipient
+  = m.attributes :title, :body
+
+= link_to 'Reply', new_message_path(:message => {:recipient_id => @message.author.id, :title => "Re: #{@message.title}"}) if current_user == @message.recipient
+\|  
+= link_to 'Edit', edit_message_path(@message)
+\|
+= link_to 'Back', messages_path

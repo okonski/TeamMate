@@ -1,0 +1,7 @@
+= semantic_form_for @message do |f|
+  = f.inputs do
+    = f.input :author_id, :as => :hidden, :value => current_user.id
+    = f.input :recipient, :as => :select
+    = f.inputs :title, :body
+  
+  = f.buttons

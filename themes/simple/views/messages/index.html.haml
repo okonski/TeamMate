@@ -1,0 +1,33 @@
+%h1 Listing messages
+
+%table
+  %tr
+    %th Author
+    %th Recipient
+    %th Title
+    %th Body
+    %th
+    %th
+    %th
+
+  - @messages.each do |message|
+    %tr
+      %td
+        - if message.author == current_user
+          me
+        - else
+          = message.author.email
+      %td
+        - if message.recipient == current_user
+          me
+        - else
+          = message.recipient.email
+      %td= message.title
+      %td= message.body
+      %td= link_to 'Show', message
+      %td= link_to 'Edit', edit_message_path(message)
+      %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Message', new_message_path

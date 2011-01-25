@@ -1,15 +1,8 @@
-%p#notice= notice
-
-%p
-  %b Category:
-  = @forum_topic.category
-%p
-  %b Title:
-  = @forum_topic.title
-%p
-  %b Author:
-  = @forum_topic.author
-
-= link_to 'Edit', edit_forum_topic_path(@forum_topic)
+= show_for @topic do |t|
+  = t.attribute :title
+  = t.association :author
+  = t.association :category
+  
+= link_to 'Edit', edit_forum_category_topic_path(@category, @topic)
 \|
-= link_to 'Back', forum_topics_path
+= link_to 'Back', forum_category_topics_path(@category)

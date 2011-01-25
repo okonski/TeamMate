@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @forum_topic
+= link_to 'Show', forum_category_topic_path(@category, @topic)
 \|
-= link_to 'Back', forum_topics_path
+= link_to 'Back', forum_category_topics_path(@category)

@@ -1,18 +1,13 @@
-= simple_form_for(@topic) do |f|
-  - if @topic.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@topic.errors.count, "error")
-        prohibited this topic from being saved:
-
-      %ul
-      - @topic.errors.full_messages.each do |msg|
-        %li= msg
-
-  .inputs
-    = f.association :category
+- url = case @topic.new_record?
+  - when true
+    - forum_category_topics_path(@category)
+  - when false
+    - forum_category_topic_path(@category, @topic)
+    
+= semantic_form_for @topic, :url => url, :as => 'topic' do |f|
+  = f.inputs do
     = f.input :title
-    = f.association :author
+    = f.input :category, :as => :radio
+    = f.input :author, :as => :radio, :value => current_user.id
 
-  .actions
-    = f.button :submit
+  = f.buttons

@@ -2,7 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    unless user.group.admin
+    user ||= User.new
+    unless user.admin?
       user.group.permissions.each do |permission|
         can permission.action.to_sym, permission.k.constantize, permission.options
       end

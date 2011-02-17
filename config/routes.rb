@@ -15,7 +15,7 @@ ClanLeopard::Application.routes.draw do
     resources :comments
   end
 
-  root :to => 'home#index'
+  root :to => 'entries#index'
 
   devise_for :users
   

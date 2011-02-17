@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   has_one :hardware
   
   accepts_nested_attributes_for :profile, :hardware
+  
+  def admin?
+    true
+  end
 end

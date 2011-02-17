@@ -1,4 +1,5 @@
-class UsersController < InheritedResources::Base
+class UsersController < ApplicationController
+  inherit_resources
   def new
     new! do |format|
       format.any do

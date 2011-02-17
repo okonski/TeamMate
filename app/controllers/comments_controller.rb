@@ -1,4 +1,5 @@
-class CommentsController < InheritedResources::Base
+class CommentsController < ApplicationController
+  inherit_resources
   nested_belongs_to :entry, :server, :polymorphic => true
   nested_belongs_to :topic, :parent_class => Forum::Topic, :polymorphic => true
   layout proc {|c| c.request.xhr? ? false : "application" }

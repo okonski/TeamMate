@@ -1,4 +1,5 @@
-class ServersController < InheritedResources::Base
+class ServersController < ApplicationController
+  inherit_resources
   authorize_resource
   
   def show

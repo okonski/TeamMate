@@ -1,4 +1,5 @@
-class MessagesController < InheritedResources::Base
+class MessagesController < ApplicationController
+  inherit_resources
   before_filter :authenticate_user!
   has_scope :read, :type => :boolean
   

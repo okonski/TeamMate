@@ -16,6 +16,8 @@ gem 'cancan'
 gem 'formtastic'
 gem 'validation_reflection'
 
+# cells
+gem 'cells'
 # Views
 gem 'will_paginate'
 gem 'simple-navigation'

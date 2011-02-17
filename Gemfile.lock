@@ -45,6 +45,8 @@ GEM
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.5.0)
+    cells (3.5.2)
+      rails (~> 3.0.0)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -137,6 +139,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable
   cancan
+  cells
   devise
   formtastic
   haml

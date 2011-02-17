@@ -1,0 +1,12 @@
+%div{:class => "comment_#{@comment.id.to_s} comment"}
+  %div
+    By
+    %span.author
+      = @comment.author.email
+  .body
+    = @comment.body
+  
+  - if can? :manage, @comment
+    .links.actions
+      = link_to 'Edit', [:edit, @comment.commentable, @comment]
+      = link_to 'Destroy', [@comment.commentable, @comment], :method => :delete, :confirm => "Are you sure?"

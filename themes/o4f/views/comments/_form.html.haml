@@ -1,0 +1,7 @@
+- f.inputs do
+  = f.input :author_id, :as => :hidden, :value => current_user.id
+  = f.input :commentable_id, :as => :hidden, :value => @commentable.id
+  = f.input :commentable_type, :as => :hidden, :value => @commentable.class.to_s.constantize.name
+  = f.input :body, :input_html => {:rows => 3, :cols => 10}, :placeholder => "Comment body", :label => false
+
+= f.buttons

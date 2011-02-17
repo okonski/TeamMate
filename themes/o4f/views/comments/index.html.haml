@@ -1,0 +1,7 @@
+.comments
+  %h5 Comments on this #{parent.class.to_s.downcase}
+  
+  - parent.comments.each do |comment|
+    = render :partial => 'comments/show', :locals => {:@comment => comment}
+  
+  = link_to_replace 'New Comment', [:new, parent, :comment]

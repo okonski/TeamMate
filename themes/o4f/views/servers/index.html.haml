@@ -1,0 +1,11 @@
+%h1 Servers
+
+%ol
+- @servers.each do |s|
+  %li
+    = link_to s.title, resource_path(s)
+
+
+- if can? :manage, Server
+  .links
+    = link_to "New Server", new_resource_path

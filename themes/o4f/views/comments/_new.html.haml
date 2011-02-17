@@ -1,0 +1,10 @@
+- @commentable ||= parent # assigns polymorphic parent if local @commentable has not been set
+
+.comment.edit
+  %h5 New comment
+  
+  = semantic_form_for [@commentable, @comment] do |f|
+    = render :partial => 'comments/form', :locals => {:f => f}
+  
+  .links
+    = link_to 'Back', @commentable

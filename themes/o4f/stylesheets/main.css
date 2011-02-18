@@ -173,8 +173,8 @@ div.shoutbox{
   -moz-border-radius: 3px;
   margin-bottom:15px;
 }
-.bar img{
-  margin-bottom:3px;
+.module .bar .flag{
+  margin-bottom:0px;
   margin-right:8px;
   margin-left:3px;
 }

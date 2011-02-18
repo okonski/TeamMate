@@ -1,7 +1,7 @@
 - @categories.each do |category|
   .module
     .bar
-      = link_to category.name, category
+      = link_to category.name, [@forum,category]
       = link_to 'Edit', edit_forum_category_path(category)
       = link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
     - for c in category.children
@@ -10,4 +10,4 @@
 
 %br
 
-= link_to 'New Category', new_forum_category_path
+= link_to 'New Category', new_forum_forum_category_path

@@ -1,4 +1,4 @@
-class Forum::ForumsController < ApplicationController
+class ForumsController < ApplicationController
   inherit_resources
   defaults :resource_class => Forum::Forum, :collection_name => 'forums', :instance_name => 'forum'
 end

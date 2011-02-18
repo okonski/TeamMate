@@ -2,12 +2,12 @@
   .module
     .bar
       = link_to forum.name, forum
-      = link_to 'Edit', edit_forum_forum_path(forum)
+      = link_to 'Edit', edit_forum_path(forum)
       = link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete
     - for c in forum.categories
-      c.name
+      = link_to c.name, forum_category_path(forum, c)
     
 
 %br
 
-= link_to 'New forum', new_forum_forum_path
+= link_to 'New forum', new_forum_path

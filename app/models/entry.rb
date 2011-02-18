@@ -1,6 +1,6 @@
 class Entry < ActiveRecord::Base
   belongs_to :author, :class_name => 'User'
-  belongs_to :category
+  belongs_to :entry_category
   has_many :comments, :as => :commentable, :dependent => :destroy
   
   # will_paginate

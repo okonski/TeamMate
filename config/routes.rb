@@ -1,13 +1,11 @@
 ClanLeopard::Application.routes.draw do
   resources :messages
 
-  namespace :forum do
-    resources :topics do
-      resources :comments
+  resources :forums do
+    resources :topics, :controller => "ForumTopics" do
+      resources :comments, :as => "posts"
     end
-    resources :forums, :path => '/'   do
-      resources :categories
-    end
+    resources :categories, :except => :index, :controller => "ForumCategories"
   end
 
   resources :users, :path => '/profiles'

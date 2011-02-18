@@ -1,5 +1,5 @@
-class Forum::Topic < ActiveRecord::Base
-  belongs_to :category, :class_name => 'Forum::Category'
+class ForumTopic < ActiveRecord::Base
+  belongs_to :category, :class_name => 'ForumCategory'
   belongs_to :author, :class_name => 'User'
   has_many :comments, :as => :commentable
   

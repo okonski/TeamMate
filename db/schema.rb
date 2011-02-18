@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 18) do
+ActiveRecord::Schema.define(:version => 19) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 18) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+  end
+
+  create_table "forum_forums", :force => true do |t|
+    t.string   "name"
+    t.integer  "order",      :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "forum_topics", :force => true do |t|

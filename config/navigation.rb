@@ -3,7 +3,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.dom_id = "nav"
     primary.item :home, "Home", root_url
-    primary.item :forum, 'Forum', [:forum, :categories]
+    primary.item :forum, 'Forums', [:forum, :forums]
     primary.item :members, 'Roster', [:users]
     primary.item :servers, 'Servers', [:servers]
     if current_user

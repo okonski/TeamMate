@@ -5,8 +5,9 @@ ClanLeopard::Application.routes.draw do
     resources :topics do
       resources :comments
     end
-    
-    resources :categories, :path => '/'  
+    resources :forums, :path => '/'   do
+      resources :categories
+    end
   end
 
   resources :users, :path => '/profiles'

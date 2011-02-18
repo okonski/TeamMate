@@ -1,0 +1,6 @@
+.module
+  .bar= @forum.name
+  - for c in @forum.categories
+    = c.name
+
+  = link_to "Add category", [:new, @forum, :category]

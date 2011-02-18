@@ -1,6 +1,6 @@
 class RotatorCell < Cell::Rails
 
   def news
-    render
+    render if request.request_uri == "/"
   end
 end

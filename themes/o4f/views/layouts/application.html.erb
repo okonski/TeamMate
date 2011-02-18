@@ -29,15 +29,13 @@
    <div id="wrapper">
          <div id="header"></div>
      <%= render_navigation %>
-     <div id="rotator">
-      <%= render_cell :rotator, :news %>
-     </div>
+     <%= render_cell :rotator, :news %>
 		 <div id="content">
         <%= yield %>
         <div style="clear:both"></div>
         <br>        
 		 </div>
-		 <div id="right">
+		 <div style="display: none;" id="right">
       <div class="module">
         <div class="bar">Location</div>
       </div>

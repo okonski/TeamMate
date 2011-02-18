@@ -6,12 +6,15 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :forum, 'Forum', [:forum, :categories]
     primary.item :members, 'Roster', [:users]
     primary.item :servers, 'Servers', [:servers]
-    primary.item :login, 'Login', [:new, :user_session]
-    primary.item :login, 'Logout', [:destroy, :user_session]
-    primary.item :entries, 'Entries', [:entries]
+    if current_user
+      primary.item :messages, 'Messages', [:messages]
+      primary.item :login, 'Logout', [:destroy, :user_session]  
+    else
+      primary.item :login, 'Login', [:new, :user_session]
+    end
     
     
-    primary.item :messages, 'Messages', [:messages] if current_user
+    
     
   end
 end

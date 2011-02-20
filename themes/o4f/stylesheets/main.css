@@ -326,8 +326,8 @@ th{
 	background: -moz-linear-gradient(top,  #1c1c1c,#0a0a0a);
 	font-size:26spx;
 }
-tr.row1, tr.row2{
-  height:60px;
+tr{
+  height:35px;
 }
 td{
   text-align:center;
@@ -335,7 +335,7 @@ td{
 .post_add td{
   text-align:left;
 }
-tr.row1 td{
+tr:nth-child(odd) td{
  background:#5c5c5c;
 }
 

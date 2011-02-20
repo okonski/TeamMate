@@ -12,7 +12,7 @@
         %td= s.address
         - if can? :manage, Server
           %td= link_to "Edit", [:edit, s]
-          %td= link_to "Remove", s, :method => :delete
+          %td= link_to "Remove", s, :method => :delete, :confirm => "Are you absolutely sure?"
 
 
 - if can? :manage, Server

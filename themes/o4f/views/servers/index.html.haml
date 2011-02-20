@@ -4,16 +4,15 @@
     %tr
       %th Name
       %th Address
-      %th Type
       - if can? :manage, Server
-        %th Options  
+        %th{:colspan => 2} Options  
     - @servers.each do |s|
       %tr
-        %td= link_to s.title, resource_path(s)
-        %td= s.address
         %td= s.title
+        %td= s.address
         - if can? :manage, Server
-          %td destroy
+          %td= link_to "Edit", [:edit, s]
+          %td= link_to "Remove", s, :method => :delete
 
 
 - if can? :manage, Server

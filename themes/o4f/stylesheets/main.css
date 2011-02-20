@@ -340,7 +340,7 @@ tr:nth-child(odd) td{
 }
 
 /* profile page */
-#profile tr.row1, #profile tr.row2{
+#profile tr{
   height:30px;
 }
 #profile td{
@@ -384,11 +384,11 @@ tr:nth-child(odd) td{
 }
 
 /* matches module */
-.statistics tr.row1, .statistics tr.row2{
+.statistics tr{
   height:20px;
 }
 
-div.matchdetails tr.row1, div.matchdetails tr.row2{
+div.matchdetails tr{
   height:20px;
 }
 
@@ -535,3 +535,13 @@ input[type="submit"]:active,input[type="reset"]:active,input[type="button"]:acti
 .avatar img{
   
 }
+/* notification styles */
+p.error, p.alert, p.notice, p.success, p.info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+p.error, p.alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+p.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+p.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+p.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+p.error a, p.alert a {color:#8a1f11;}
+p.notice a {color:#514721;}
+p.success a {color:#264409;}
+p.info a {color:#205791;}

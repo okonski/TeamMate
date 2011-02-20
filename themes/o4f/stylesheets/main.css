@@ -91,6 +91,9 @@ ul#nav li:hover{
 ul#nav li:hover a{
   text-shadow: #EEE 0 0 7px;
 }
+ul#nav li.selected a{
+  text-shadow: red 0 0 7px;
+}
 #nav .donate:hover a{
   text-shadow: red 0 0 7px;
 }

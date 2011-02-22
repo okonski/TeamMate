@@ -28,5 +28,5 @@ Take a look at the sample template in themes/o4f and change it to your likings o
 
 ## License
 
-TeamMate CMS is released under the [MIT license](http://github.com/okonski/TeamMate/blob/master/license.md#readme).
+TeamMate CMS is released under the [MIT license](https://github.com/okonski/TeamMate/blob/master/License.md#readme).
 

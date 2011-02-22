@@ -25,6 +25,7 @@ TeamMate is deployed just like every other Rails 3 app:
 ## Creating own template
 
 Take a look at the sample template in themes/o4f and change it to your likings or create a new one based on it!
+
 ## License
 
 TeamMate CMS is released under the [MIT license](http://github.com/okonski/TeamMate/blob/master/license.md#readme).

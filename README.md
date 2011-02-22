@@ -9,16 +9,16 @@ TeamMate is an open source content management system created for clan sites in R
 ## Installation
 
 TeamMate is deployed just like every other Rails 3 app:  
-1. Clone this repository.
-2. Run bundler to install all dependecies:
+- Clone this repository. 
+- Run bundler to install all dependecies: 
 
     bundle install
-3. Edit databases.yml to match your database settings.
-4. Setup and migrate databases using rake:
+- Edit databases.yml to match your database settings.
+- Setup and migrate databases using rake: 
 
     rake db:setup
     rake db:migrate
-5. Start server
+- Start the server 
 
     rails s
 

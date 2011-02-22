@@ -13,15 +13,15 @@ TeamMate is deployed just like every other Rails 3 app:
 - Clone this repository.
 - Run bundler to install all dependecies:
 
-    bundle install
+      bundle install
 - Edit databases.yml to match your database settings.
 - Setup and migrate databases using rake:
 
-    rake db:setup
-    rake db:migrate
+      rake db:setup
+      rake db:migrate
 - Start the server
 
-    rails s
+      rails s
 
 ## License
 

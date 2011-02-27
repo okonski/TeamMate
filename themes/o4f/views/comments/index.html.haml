@@ -1,5 +1,5 @@
-.comments
-  %h5 Comments on this #{parent.class.to_s.downcase}
+.module
+  .bar Comments on this #{parent.class.to_s.downcase}
   
   - parent.comments.each do |comment|
     = render :partial => 'comments/show', :locals => {:@comment => comment}

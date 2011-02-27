@@ -1,7 +1,7 @@
 - @commentable ||= parent
 
-.comment.edit
-  %h5 Editing comment
+.module
+  .bar Editing comment
   
   = semantic_form_for [@commentable, @comment] do |f|
     = render :partial => 'comments/form', :locals => {:f => f}

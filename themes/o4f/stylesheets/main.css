@@ -256,15 +256,13 @@ fieldset{
 a{
   text-decoration:none;
   color:#dfdfdf;
+  font-weight: bold;
   text-shadow:#1c1c1c 2px 2px 2px;
 
 }
 
 a:hover{
-  text-decoration:none;
-  position:relative;
-  top:-1px;
-  text-shadow:#1c1c1c 3px 3px 1px;
+  text-decoration:underline;
 }
 
 /* shoutbox */

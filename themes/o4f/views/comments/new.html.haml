@@ -1,5 +1,5 @@
-.comment.new
-  %h5 New comment
+.module
+  .bar New comment
   
   = semantic_form_for [parent, @comment] do |f|
     = render :partial => 'comments/form', :locals => {:f => f, :@commentable => parent}

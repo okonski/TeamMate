@@ -4,8 +4,23 @@
       = link_to forum.name, forum
       = link_to 'Edit', edit_forum_path(forum)
       = link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete
-    - for c in forum.categories
-      = link_to c.name, forum_category_path(forum, c)
+    %table{:style => "margin-top: -15px;",:cellspacing => 0, :cellpadding => 0}
+      %tr
+        %th Category
+        %th Latest topic
+        %th Topics
+        %th Posts
+      - if forum.categories.empty?
+        %tr
+          %td{:colspan => 4}
+            No categories in this forum
+      - for c in forum.categories
+        %tr
+          %td= link_to c.name, forum_category_path(forum, c)
+          %td= c.topics.first.name rescue "Never"
+          %td= c.topics.count
+          %td= c.comments.count
+      
     
 
 %br

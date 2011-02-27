@@ -30,13 +30,13 @@
    <div id="wrapper">
          <div id="header"></div>
      <%= render_navigation %>
-     <%= render_cell :rotator, :news %>
      <% if flash[:notice] %>
      <p class="success"><%= flash[:notice] %></p>
      <% end %>
      <% if flash[:error] %>
      <p class="error"><%= flash[:error] %></p>
      <% end %>
+     <%= render_cell :rotator, :news %>
 		 <div id="content">
         <%= yield %>
         <div style="clear:both"></div>

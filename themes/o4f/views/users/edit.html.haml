@@ -1,9 +1,9 @@
-%h1 Editing user
+.module
+  .bar Editing user
 
-= semantic_form_for @user do |f|
-  
-  = render :partial => 'form', :locals => {:f => f}
+  = semantic_form_for @user do |f|
+    = render :partial => 'form', :locals => {:f => f}
 
 = link_to 'Show', @user
-\|
+
 = link_to 'Back', users_path

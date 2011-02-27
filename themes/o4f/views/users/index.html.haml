@@ -1,22 +1,23 @@
-%h1 Listing users
+.module
+  .bar Roster
 
-%table
-  %tr
-    %th Name
-    %th Email
-    %th
-
-  - @users.each do |user|
+  %table
     %tr
-      %td= user.name
-      %td= user.email
-      %td
+      %th Name
+      %th Country
+      %th Status
+      %th Rank
+      - if can? :manage, User
+        %th Options
+
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td PL
+        %td status
+        %td= user.group.name
         - if can? :manage, user
-          = link_to 'Show', user
-          = link_to 'Edit', edit_user_path(user)
-          = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-- if can? :create, User
-  = link_to 'New User', [:new, :user]
+          %td
+            = link_to 'Show', user
+            = link_to 'Edit', edit_user_path(user)
+            = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete

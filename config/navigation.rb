@@ -7,14 +7,10 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :members, 'Roster', [:users]
     primary.item :servers, 'Servers', [:servers]
     if current_user
-      primary.item :messages, 'Messages', [:messages]
+      primary.item :profile, 'Profile', [:edit, current_user]
       primary.item :login, 'Logout', [:destroy, :user_session]  
     else
       primary.item :login, 'Login', [:new, :user_session]
     end
-    
-    
-    
-    
   end
 end

@@ -9,7 +9,6 @@ ClanLeopard::Application.routes.draw do
   end
 
   resources :users, :path => '/profiles'
-
   resources :servers, :entries do
     resources :comments
   end
